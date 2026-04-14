@@ -52,9 +52,10 @@ class FlyingRobot(BaseRobot):
             weight: int,
             coords: list[int] | None = None
     ) -> None:
-        if coords is None:
-            coords = [0, 0, 0]
         super().__init__(name=name, weight=weight, coords=coords)
+
+        if coords is None:
+            self.coords = [0, 0, 0]
 
     def go_up(
             self,
